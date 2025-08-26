@@ -1,0 +1,33 @@
+/* --- Global Styles --- */
+body {
+    background-color: #f4f4f9;
+
+    /* A dark grey for text, easier on the eyes than pure black */
+    color: #333;
+
+    font-family: Arial, sans-serif;
+
+    /* Adds some space between lines of text */
+    line-height: 1.6;
+}
+
+h1 {
+    color: #005a9c;
+
+}
+
+header,
+main,
+footer {
+    /* Adds 20px of space OUTSIDE the border of these elements */
+    margin: 20px;
+
+    /* Adds 20px of space INSIDE the border */
+    padding: 20px;
+
+    /* A thin, light grey border */
+    border: 1px solid #d1d1d1;
+
+    /* Make the sections white to stand out */
+    background-color: white;
+}
