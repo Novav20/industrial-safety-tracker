@@ -31,3 +31,50 @@ footer {
     /* Make the sections white to stand out */
     background-color: white;
 }
+
+/* --- Navigation --- */
+nav ul {
+    display: flex;
+
+    /* Distributes the items evenly with space around them. */
+    justify-content: space-around;
+
+    /* Vertically centers the items within the container. */
+    align-items: center;
+
+    /* Removes the default black list bullets. */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    /* Removes the underline from links. */
+    text-decoration: none;
+    color: #005a9c;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.container {
+    max-width: 1000px;
+
+    /* This is the classic trick for centering a block element. */
+    margin: 0 auto;
+}
+
+/* ---Forms --- */
+form div {
+    display: flex;
+    /* This stacks the flex items vertically. */
+    flex-direction: column;
+
+    /* Adds some space between each form field group. */
+    margin-bottom: 15px;
+}
+
+form label {
+    /* Adds a little space between the label and its input. */
+    margin-bottom: 5px;
+    font-weight: bold;
+}
