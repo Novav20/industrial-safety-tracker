@@ -1,9 +1,17 @@
+:root {
+    --primary-color: #005a9c;
+    --background-color: #f4f4f9;
+    --text-color: #333;
+    --border-color: #d1d1d1;
+    --white-color: #ffffff;
+}
+
 /* --- Global Styles --- */
 body {
-    background-color: #f4f4f9;
+    background-color: var(--background-color);
 
     /* A dark grey for text, easier on the eyes than pure black */
-    color: #333;
+    color: var(--text-color);
 
     font-family: Arial, sans-serif;
 
@@ -12,7 +20,7 @@ body {
 }
 
 h1 {
-    color: #005a9c;
+    color: var(--primary-color);
 
 }
 
@@ -26,10 +34,10 @@ footer {
     padding: 20px;
 
     /* A thin, light grey border */
-    border: 1px solid #d1d1d1;
+    border: 1px solid var(--border-color);
 
     /* Make the sections white to stand out */
-    background-color: white;
+    background-color: var(--white-color);
 }
 
 /* --- Navigation --- */
@@ -51,9 +59,17 @@ nav ul {
 nav a {
     /* Removes the underline from links. */
     text-decoration: none;
-    color: #005a9c;
+    color: var(--primary-color);
     font-weight: bold;
     padding: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: #e60023; /* A contrasting color (like red) for when the link is being clicked */
 }
 
 .container {
@@ -77,4 +93,16 @@ form label {
     /* Adds a little space between the label and its input. */
     margin-bottom: 5px;
     font-weight: bold;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+form input:focus {
+    outline: none; /* Removes the default browser outline */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 90, 156, 0.5); /* Adds a subtle blue glow */
 }
