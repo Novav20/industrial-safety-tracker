@@ -42,14 +42,6 @@ footer {
 
 /* --- Navigation --- */
 nav ul {
-    display: flex;
-
-    /* Distributes the items evenly with space around them. */
-    justify-content: space-around;
-
-    /* Vertically centers the items within the container. */
-    align-items: center;
-
     /* Removes the default black list bullets. */
     list-style-type: none;
     padding: 0;
@@ -69,7 +61,8 @@ nav a:hover {
 }
 
 nav a:active {
-    color: #e60023; /* A contrasting color (like red) for when the link is being clicked */
+    color: #e60023;
+    /* A contrasting color (like red) for when the link is being clicked */
 }
 
 .container {
@@ -98,11 +91,41 @@ form label {
 form input {
     padding: 8px;
     border: 1px solid var(--border-color);
-    border-radius: 4px; /* Slightly rounded corners */
+    border-radius: 4px;
+    /* Slightly rounded corners */
 }
 
 form input:focus {
-    outline: none; /* Removes the default browser outline */
+    /* Removes the default browser outline */
+    outline: none;
+
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(0, 90, 156, 0.5); /* Adds a subtle blue glow */
+
+    /* Adds a subtle blue glow */
+    box-shadow: 0 0 5px rgba(0, 90, 156, 0.5);
+}
+
+/* --- Media Queries --- */
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    /* This is where styles for screens 768px and wider will go */
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+
+        /* Distributes the items evenly with space around them. */
+        justify-content: space-around;
+
+        /* Vertically centers the items within the container. */
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        /* Widen the main content area for large screens */
+        max-width: 1200px;
+    }
 }
