@@ -50,8 +50,16 @@ function init() {
     setupMobileNavigation();
     setupFormValidation();
 
-    if(document.querySelector('#equipment-container')){
+    if (document.querySelector('#equipment-container')) {
         renderEquipmentList(equipmentData);
+        const searchInput = document.querySelector('#search-input');
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredEquipment = equipmentData.filter((equipment) => {
+                return equipment.name.toLowerCase().includes(searchTerm);
+            });
+            renderEquipmentList(filteredEquipment);
+        });
     }
 }
 
