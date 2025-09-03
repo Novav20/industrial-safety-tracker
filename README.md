@@ -4,8 +4,7 @@ This project is a full-stack web application designed to help industrial teams t
 
 ## Technology Stack
 
-As of Week 1, the project is built with the foundational technologies of the web:
-
-*   **HTML5:** For structuring the content and layout.
-*   **CSS3:** For styling and creating responsive layouts with Flexbox.
-*   **Git:** For version control and tracking project history.
+*   **HTML5:** For semantic content structure.
+*   **CSS3:** For styling, Flexbox layouts, and **responsive design with media queries**.
+*   **JavaScript (ES6+):** For DOM manipulation and client-side form validation.
+*   **Git:** For version control.
