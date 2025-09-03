@@ -1,5 +1,6 @@
 :root {
     --primary-color: #005a9c;
+    --secondary-color: #005983;
     --background-color: #f4f4f9;
     --text-color: #333;
     --border-color: #d1d1d1;
@@ -161,6 +162,18 @@ form input:focus {
     margin: 5px 0;
 }
 
+/* --- Equipment Card --- */
+.equipment-card {
+    background-color: #f9f9f9;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.equipment-card h2 {
+    color: var(--secondary-color);
+}
 /* --- Media Queries --- */
 
 /* Tablet Styles */
@@ -211,3 +224,4 @@ form input:focus {
         max-width: 1200px;
     }
 }
+
