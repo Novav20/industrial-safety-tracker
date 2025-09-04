@@ -34,10 +34,11 @@ function renderEquipmentList(items) {
     //TODO: Which ops is more efficient? cleaning the container or looking for existing id an skip it.
     container.innerHTML = '';
     items.forEach((equipment) => {
+        const statusClass = equipment.status === 'Needs Maintenance' ? 'status-maintenance': '';
         const equipmentHTML = `
-        <div class="equipment-card">
+        <div class="equipment-card ${statusClass}">
             <h2>${equipment.name}</h2>
-            <p>Status: ${equipment.status}</p>
+            <p>Status: <strong>${equipment.status}</strong></p>
             <p>Last Checked: ${equipment.lastChecked}</p>
         </div>
         `;

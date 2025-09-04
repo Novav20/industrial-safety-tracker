@@ -8,3 +8,12 @@ This project is a full-stack web application designed to help industrial teams t
 *   **CSS3:** For styling, Flexbox layouts, and **responsive design with media queries**.
 *   **JavaScript (ES6+):** For DOM manipulation and client-side form validation.
 *   **Git:** For version control.
+
+## Features
+
+*   Fully responsive design for mobile, tablet, and desktop.
+*   Interactive mobile navigation with a hamburger menu.
+*   Client-side validation on the incident report form.
+*   **Dynamic rendering of an equipment list from a JavaScript data source.**
+*   **Real-time search filter for the equipment list.**
+*   **Conditional styling to highlight equipment requiring maintenance.**
