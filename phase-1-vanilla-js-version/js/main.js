@@ -42,9 +42,9 @@ function setupFormValidation() {
     }
 }
 
+// --- Populate list of equipments ---
 function renderEquipmentList(items) {
     const container = document.querySelector('#equipment-container');
-    //TODO: Which ops is more efficient? cleaning the container or looking for existing id an skip it.
     container.innerHTML = '';
     items.forEach((equipment) => {
         const statusClass = equipment.status === 'Needs Maintenance' ? 'status-maintenance' : '';
@@ -59,6 +59,8 @@ function renderEquipmentList(items) {
         container.innerHTML += equipmentHTML;
     });
 }
+
+// -- Populate list of incident reports ---
 function renderIncidents(incidents) {
     const container = document.querySelector('#incident-list-container');
     container.innerHTML = '';
