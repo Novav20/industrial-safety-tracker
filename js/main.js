@@ -32,6 +32,7 @@ function setupFormValidation() {
                     date: dateValue
                 };
                 incidentsData.push(newIncident);
+                saveIncidentsToLocalStorage();
                 renderIncidents(incidentsData);
                 incidentForm.reset();
             } else {
@@ -72,7 +73,20 @@ function renderIncidents(incidents) {
     });
 }
 
+function saveIncidentsToLocalStorage() {
+    localStorage.setItem('incidents', JSON.stringify(incidentsData));
+}
+function loadIncidentsFromLocalStorage() {
+    const savedIncidentsString = localStorage.getItem('incidents');
+    if (savedIncidentsString !== null) {
+        incidentsData = JSON.parse(savedIncidentsString);
+    }
+}
 function init() {
+    loadIncidentsFromLocalStorage();
+    if (document.querySelector('#incident-list-container')) {
+        renderIncidents(incidentsData);
+    }
     setupMobileNavigation();
     setupFormValidation();
 
