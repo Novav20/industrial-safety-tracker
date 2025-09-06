@@ -34,7 +34,7 @@ function renderEquipmentList(items) {
     //TODO: Which ops is more efficient? cleaning the container or looking for existing id an skip it.
     container.innerHTML = '';
     items.forEach((equipment) => {
-        const statusClass = equipment.status === 'Needs Maintenance' ? 'status-maintenance': '';
+        const statusClass = equipment.status === 'Needs Maintenance' ? 'status-maintenance' : '';
         const equipmentHTML = `
         <div class="equipment-card ${statusClass}">
             <h2>${equipment.name}</h2>
@@ -44,6 +44,19 @@ function renderEquipmentList(items) {
         `;
 
         container.innerHTML += equipmentHTML;
+    });
+}
+function renderIncidents(incidents) {
+    const container = document.querySelector('#incident-list-container');
+    container.innerHTML = '';
+    incidents.forEach((incident) => {
+        const incidentHTML = `
+            <div class="incident-card">
+            <h2>${incident.title}</h2>
+            <p>Date: ${incident.date}</p>
+            </div>
+        `;
+        container.innerHTML += incidentHTML;
     });
 }
 

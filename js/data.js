@@ -30,3 +30,5 @@ const equipmentData = [
         lastChecked: "2025-02-20"
     }
 ];
+
+let incidentsData = [];
