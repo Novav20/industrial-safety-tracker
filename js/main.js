@@ -15,15 +15,27 @@ function setupFormValidation() {
 
     if (incidentForm) {
         const titleInput = document.querySelector('#incident-title');
+        const descriptionInput = document.querySelector('#incident-description');
+        const dateInput = document.querySelector('#incident-date');
 
         incidentForm.addEventListener('submit', (event) => {
             event.preventDefault();
             const titleValue = titleInput.value.trim();
+            const descriptionValue = descriptionInput.value.trim();
+            const dateValue = dateInput.value.trim();
+            if (titleValue !== '') {
 
-            if (titleValue === '') {
-                alert('Incident Title cannot be empty.');
+                const newIncident = {
+                    id: Date.now(),
+                    title: titleValue,
+                    description: descriptionValue,
+                    date: dateValue
+                };
+                incidentsData.push(newIncident);
+                renderIncidents(incidentsData);
+                incidentForm.reset();
             } else {
-                alert('Form submitted successfully!');
+                alert('Title must not be empty');
             }
         });
     }
@@ -52,7 +64,7 @@ function renderIncidents(incidents) {
     incidents.forEach((incident) => {
         const incidentHTML = `
             <div class="incident-card">
-            <h2>${incident.title}</h2>
+            <h3>${incident.title}</h3>
             <p>Date: ${incident.date}</p>
             </div>
         `;
