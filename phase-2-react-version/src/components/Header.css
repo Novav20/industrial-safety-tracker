@@ -1,0 +1,139 @@
+header {
+    /* Adds 20px of space OUTSIDE the border of these elements */
+    margin: 20px;
+
+    /* Adds 20px of space INSIDE the border */
+    padding: 20px;
+
+    /* A thin, light grey border */
+    border: 1px solid var(--border-color);
+
+    /* Make the sections white to stand out */
+    background-color: var(--white-color);
+}
+
+/* --- Navigation --- */
+nav {
+    /* Positions the nav relative to the viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* 100% of the viewport height */
+    height: 100vh;
+
+    /* A semi-transparent version of our primary color */
+    background-color: rgba(0, 90, 156, 0.95);
+
+    /* The magic to hide it */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    /* Smooth slide-in animation */
+}
+
+nav ul {
+    /* Removes the default black list bullets. */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Change nav link color to be visible on the dark overlay */
+nav a {
+    /* Removes the underline from links. */
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    padding: 20px;
+
+    /* Make the links bigger */
+    font-size: 1.5rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: #e60023;
+    /* A contrasting color (like red) for when the link is being clicked */
+}
+
+/* This new class will be toggled by JavaScript */
+nav.nav-open {
+    transform: translateX(0);
+}
+
+
+/* --- Hamburger Button --- */
+.hamburger-btn {
+    display: block;
+    /* Make it visible by default */
+    position: relative;
+    /* For z-index to work */
+    z-index: 1000;
+    /* Ensures it stays on top of the nav overlay */
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 5px 0;
+}
+
+/* --- Media Queries --- */
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    /* This is where styles for screens 768px and wider will go */
+
+    /* --- HIDE HAMBURGER ON DESKTOP --- */
+    .hamburger-btn {
+        display: none;
+    }
+
+    /* --- RESET NAV STYLES FOR DESKTOP --- */
+    nav {
+        /* Back to normal document flow */
+        position: static;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        /* No more sliding */
+        transform: none;
+
+        /* ADD THIS: Ensure the nav takes up appropriate space */
+        padding: 0;
+    }
+
+    /* --- RESET NAV UL STYLES FOR DESKTOP --- */
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        /* ADD THIS: Reset the height from the mobile overlay */
+        height: auto;
+    }
+
+    /* --- RESET NAV LINK STYLES FOR DESKTOP --- */
+    nav a {
+        color: var(--primary-color);
+        font-size: 1rem;
+        padding: 10px;
+    }
+}

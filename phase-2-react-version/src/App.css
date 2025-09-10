@@ -1,42 +1,87 @@
-#root {
-  max-width: 1280px;
+main {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--white-color);
+}
+
+.container {
+  max-width: 1000px;
+
+  /* This is the classic trick for centering a block element. */
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ---Forms --- */
+form div {
+  display: flex;
+  /* This stacks the flex items vertically. */
+  flex-direction: column;
+
+  /* Adds some space between each form field group. */
+  margin-bottom: 15px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+form label {
+  /* Adds a little space between the label and its input. */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  /* Slightly rounded corners */
+}
+
+form input:focus {
+  /* Removes the default browser outline */
+  outline: none;
+
+  border-color: var(--primary-color);
+
+  /* Adds a subtle blue glow */
+  box-shadow: 0 0 5px rgba(0, 90, 156, 0.5);
+}
+
+/* --- Search --- */
+.search-container {
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* --- Equipment Card --- */
+.equipment-card {
+  background-color: #f9f9f9;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.equipment-card h2 {
+  color: var(--secondary-color);
+}
+
+.equipment-card.status-maintenance {
+  /* select an element with both classes */
+  border-left: 5px solid #d9534f;
+  background-color: #fcf2f2;
+}
+
+/* --- Media Queries --- */
+
+@media (min-width: 1024px) {
+  .container {
+    /* Widen the main content area for large screens */
+    max-width: 1200px;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
